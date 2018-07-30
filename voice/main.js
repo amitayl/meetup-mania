@@ -27,7 +27,7 @@ function listen0() {
 /**
  * 
  */
-function listen() {
+function listen1() {
     $('#bot').show()
     Asr.startListen(function (text, final) {
 
@@ -89,22 +89,22 @@ function listen2() {
 /**
  * 
  */
-function listen1() {
+function listen() {
     // $('#bot').show()
     Asr.startListen(function (text, final) {
         if (final) {
             $('#textCaptured').text('FINAL: ' + text)
-            // //$('#bot').hide()
-            // Nlu.process(text, function (resultData) {
-            //     console.log('got back', resultData);
-            //     var intentId = resultData.entities.intent && resultData.entities.intent[0].value;
-            //     var number = resultData.entities.number && resultData.entities.number[0].value;
-            //     if (intentId === 'JokeIntent') {
-            //         Joker.joke(number);
-            //     } else {
-            //         Tts.speak('You must be kidding! I cannot understand a word you are saying');
-            //     }
-            // })
+            //$('#bot').hide()
+            Nlu.process(text, function (resultData) {
+                console.log('got back', resultData);
+                var intentId = resultData.entities.intent && resultData.entities.intent[0].value;
+                var number = resultData.entities.number && resultData.entities.number[0].value;
+                if (intentId === 'JokeIntent') {
+                    Joker.joke(number);
+                } else {
+                    Tts.speak('You must be kidding! I cannot understand a word you are saying');
+                }
+            })
         } else {
             $('#textCaptured').text('Interim: ' + text)
         }
