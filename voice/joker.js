@@ -202,7 +202,7 @@ Joker.tellAJoke = function (numberOfJokes) {
                      setTimeout(Joker.tellAJoke, 1000, numberOfJokes)
                  }
             } , 'Google UK English Male' )
-        }, 1000)
+        }, 1000) 
     })  
 
 }
