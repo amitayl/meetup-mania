@@ -198,10 +198,10 @@ Joker.tellAJoke = function (numberOfJokes) {
     Tts.speak(joke.setup, function () {
         setTimeout(function () {
             Tts.speak(joke.punchline, function () {
-                // if (--numberOfJokes) {
-                //     setTimeout(Joker.tellAJoke, 1000, numberOfJokes)
-                // }
-            } /*, 'Google UK English Male'*/ )
+                 if (--numberOfJokes) {
+                     setTimeout(Joker.tellAJoke, 1000, numberOfJokes)
+                 }
+            } , 'Google UK English Male' )
         }, 1000)
     })
 
