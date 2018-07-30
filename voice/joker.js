@@ -203,7 +203,7 @@ Joker.tellAJoke = function (numberOfJokes) {
                  }
             } , 'Google UK English Male' )
         }, 1000)
-    }) 
+    })  
 
 }
 Joker.joke = function (numberOfJokes) {
